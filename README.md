@@ -1,6 +1,6 @@
 # redux-root-state
 
-Return back `DefaultRootState` for [react-redux](https://www.npmjs.com/package/react-redux).
+Return the `DefaultRootState` interface back to the [react-redux](https://www.npmjs.com/package/react-redux) library.
 
 ## How to Use
 
@@ -11,7 +11,6 @@ npm i redux-root-state
 
 Step 2.
 
-Add declaration
 ```typescript
 type RootState = ReturnType<typeof store.getState>;
 
@@ -22,5 +21,5 @@ declare module "redux-root-state" {
 
 Step 3.
 ```typescript
-import { useDispatch, useSelector } from "redux-root-state";
+import { useDispatch, useSelector, connect } from "redux-root-state";
 ```

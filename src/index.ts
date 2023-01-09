@@ -1,11 +1,13 @@
-import type { EqualityFn } from "react-redux";
-import { useSelector as useDefaultSelector, useDispatch } from "react-redux";
+import type { TypedUseSelectorHook, Connect } from "react-redux";
+import {
+  useDispatch,
+  useSelector as useDefaultSelector,
+  connect as defaultConnect,
+} from "react-redux";
 
 export interface DefaultRootState {}
 
-const useSelector: <TState = DefaultRootState, Selected = unknown>(
-  selector: (state: TState) => Selected,
-  equalityFn?: EqualityFn<Selected> | undefined
-) => Selected = useDefaultSelector;
+const useSelector: TypedUseSelectorHook<DefaultRootState> = useDefaultSelector;
+const connect: Connect<DefaultRootState> = defaultConnect;
 
-export { useDispatch, useSelector };
+export { useDispatch, useSelector, connect };
