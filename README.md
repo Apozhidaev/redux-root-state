@@ -13,9 +13,11 @@ Step 2.
 
 ```typescript
 type RootState = ReturnType<typeof store.getState>;
+type AppDispatch = typeof store.dispatch;
 
 declare module "redux-root-state" {
   export interface DefaultRootState extends RootState {}
+  export interface DefaultAppDispatch extends AppDispatch {}
 }
 ```
 
